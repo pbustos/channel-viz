@@ -145,15 +145,7 @@
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
 									
 									 // Build Graph
-									var maxV = -1000;
-									var minV = 1000;
-									datastreamData.datapoints.forEach(function(datapoint) {
-				
-										if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > maxV) maxV = parseFloat(datapoint.value);
-										if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < minV) minV = parseFloat(datapoint.value);
 									
-									});
-								
                                                                         
                                                                         var graph = new Rickshaw.Graph( {
                                                                                 element: document.querySelector('#graph-' + feedId + '-' + datastream.id),
@@ -162,8 +154,6 @@
                                                                                 renderer: 'line',
                                                                                 min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
                                                                                 max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
-                                                                                //min: minV,
-                                                                                //max: maxV,
                                                                                 padding: {
                                                                                         top: 0.02,
                                                                                         right: 0.02,
