@@ -130,8 +130,7 @@
 
 									// Add Each Datapoint to Array
 									datastreamData.datapoints.forEach(function(datapoint) {
-										if(datapoint.value > 100) datapoint.value=100;
-										if(datapoint.value < -20) datapoint.value=-20;
+							
 										points.push({x: new Date(datapoint.at).getTime()/1000.0, y: parseFloat(datapoint.value)});
 									});
 
@@ -146,6 +145,9 @@
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
 									
 									 // Build Graph
+									if(datastream.max_value > 100) datastream.max_value=100;
+									if(datastream.min_value < -20) datastream.min_value=-20;
+                                                                        
                                                                         var graph = new Rickshaw.Graph( {
                                                                                 element: document.querySelector('#graph-' + feedId + '-' + datastream.id),
                                                                                 width: 600,
