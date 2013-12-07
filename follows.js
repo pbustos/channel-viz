@@ -145,13 +145,13 @@
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
 									
 									 // Build Graph
-									//var max = -1000;
-									//var min = 1000;
-									//datastreamData.datapoints.forEach(function(datapoint) {
+									var maxV = -1000;
+									var minV = 1000;
+									datastreamData.datapoints.forEach(function(datapoint) {
 				
-									//	if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > max) max = parseFloat(datapoint.value);
-									//	if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < min) min = parseFloat(datapoint.value);
-									//});
+										if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > maxV) max = parseFloat(datapoint.value);
+										if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < minV) min = parseFloat(datapoint.value);
+									});
 								
                                                                         
                                                                         var graph = new Rickshaw.Graph( {
@@ -159,8 +159,10 @@
                                                                                 width: 600,
                                                                                 height: 200,
                                                                                 renderer: 'line',
-                                                                                min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
-                                                                                max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
+                                                                                //min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
+                                                                                //max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
+                                                                                min: minV;
+                                                                                max: maxV;
                                                                                 padding: {
                                                                                         top: 0.02,
                                                                                         right: 0.02,
