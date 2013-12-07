@@ -149,8 +149,8 @@
 									var minV = 1000;
 									datastreamData.datapoints.forEach(function(datapoint) {
 				
-										if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > maxV) max = parseFloat(datapoint.value);
-										if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < minV) min = parseFloat(datapoint.value);
+										if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > maxV) maxV = parseFloat(datapoint.value);
+										if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < minV) minV = parseFloat(datapoint.value);
 									});
 								
                                                                         
