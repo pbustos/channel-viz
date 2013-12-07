@@ -12,7 +12,7 @@
 		hideForm		= 0;
 	*/
 
-	var defaultKey		= '6kw4mRqY2M9o6D2asawPdNWdeYBNbaTSqkc8P7liR7dKgibp', // Unique master Xively API key to be used as a default
+	var defaultKey		= '', // Unique master Xively API key to be used as a default
 		defaultFeeds	= [1454484448], // Comma separated array of Xively Feed ID numbers
 		applicationName	= 'La Autora', // Replaces Xively logo in the header
 		dataDuration	= '', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
