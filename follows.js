@@ -145,6 +145,13 @@
 									$('#feed-' + feedId + ' .datastreams .datastream-' + datastream.id + ' .graph').attr('id', 'graph-' + feedId + '-' + datastream.id);
 									
 									 // Build Graph
+									var max = -1000;
+									var min = 1000;
+									datastreamData.datapoints.forEach(function(datapoint) {
+				
+										if ( parseFloat(datapoint.value) < 100 and parseFloat(datapoint.value) > max) max = parseFloat(datapoint.value);
+										if ( parseFloat(datapoint.value) > -10 and parseFloat(datapoint.value) < min) min = parseFloat(datapoint.value);
+									});
 									if(datastream.max_value > 100) datastream.max_value=100;
 									if(datastream.min_value < -20) datastream.min_value=-20;
                                                                         
