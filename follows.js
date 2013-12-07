@@ -12,9 +12,9 @@
 		hideForm		= 0;
 	*/
 
-	var defaultKey		= '', // Unique master Xively API key to be used as a default
-		defaultFeeds	= [], // Comma separated array of Xively Feed ID numbers
-		applicationName	= '', // Replaces Xively logo in the header
+	var defaultKey		= '6kw4mRqY2M9o6D2asawPdNWdeYBNbaTSqkc8P7liR7dKgibp', // Unique master Xively API key to be used as a default
+		defaultFeeds	= [1454484448], // Comma separated array of Xively Feed ID numbers
+		applicationName	= 'La Autora', // Replaces Xively logo in the header
 		dataDuration	= '', // Default duration of data to be displayed // ref: https://xively.com/dev/docs/api/data/read/historical_data/
 		dataInterval	= 0, // Default interval for data to be displayed (in seconds)
 		dataColor		= '', // CSS HEX value of color to represent data (omit leading #)
@@ -159,10 +159,10 @@
                                                                                 width: 600,
                                                                                 height: 200,
                                                                                 renderer: 'line',
-                                                                                min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
-                                                                                max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
-                                                                                //min: minV;
-                                                                                //max: maxV;
+                                                                                //min: parseFloat(datastream.min_value) - .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
+                                                                                //max: parseFloat(datastream.max_value) + .25*(parseFloat(datastream.max_value) - parseFloat(datastream.min_value)),
+                                                                                min: minV;
+                                                                                max: maxV;
                                                                                 padding: {
                                                                                         top: 0.02,
                                                                                         right: 0.02,
